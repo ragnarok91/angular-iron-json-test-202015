@@ -1,0 +1,26 @@
+<h1>
+  使用ngFor顯示陣列內容
+</h1>
+
+<app-hero [inputDefaultHero]="newHero" (outputAddHero)="getNewHeroFromAnotherComponent($event)"></app-hero>
+
+<div *ngFor="let hero of heros">
+    <div>
+        名字: 
+        <span [ngSwitch]="hero.age">
+        <span *ngSwitchCase="12">
+          小英雄
+        </span>
+        <span *ngSwitchCase="8">
+          小小英雄
+        </span>
+        <span *ngSwitchDefault>
+          {{hero.name}}
+        </span>
+      </span>
+    </div>
+    <div>
+        年齡: {{hero.age}}
+    </div>
+    ===========
+</div>
